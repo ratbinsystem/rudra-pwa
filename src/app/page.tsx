@@ -5,6 +5,7 @@ export default function Home() {
     <div className="page">
       <h1 className="cs">Comming Soon</h1>
       <h1 className="rg">Rudra GYM</h1>
+      <h1 className="a">Near Budhdwar, Bakhri bazar, Begusrai pin - 848201</h1>
       <p className="os">Grand opening 1 May, 2025</p>
       <p className="eb">Early bird discount 40%. Call/Whatsapp at 9479422951 to book before 1 May</p>
     </div>
