@@ -15,7 +15,7 @@ export default function Home() {
         />
         <ol>
           <li>
-            Rudra <code>src/app/page.tsx</code>.
+            Rudra <code>GYM</code>.
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
