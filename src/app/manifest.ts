@@ -2,9 +2,9 @@ import type { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Next.js PWA',
-    short_name: 'NextPWA',
-    description: 'A Progressive Web App built with Next.js',
+    name: 'Rudra Gym',
+    short_name: 'RGym',
+    description: 'Rudra Gym is where fitness meets discipline. With expert trainers, top-tier equipment, and a supportive community, we help you push limits and achieve your goals. Join us and transform your fitness journey!  ',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',
