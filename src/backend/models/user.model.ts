@@ -5,7 +5,7 @@ import TypeModel from './type.model';
 import DocumentModel from './document.model';
 import AddressModel from './address.model';
 import { logChangeStream } from "./IMHelper";
-
+import MembershipModel from './membership.model';
 
 const schema = new Schema<IUser>({
     name: title, description,
@@ -19,6 +19,7 @@ const schema = new Schema<IUser>({
     contacts: [{ ref: TypeModel, type: Schema.Types.ObjectId }],
     documents: [{ ref: DocumentModel, type: Schema.Types.ObjectId }],
     emergencyContact: description,
+    memberships: [{ ref: MembershipModel, type: Schema.Types.ObjectId }],
 }, {
     timestamps: true,
     methods: {},

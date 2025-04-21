@@ -4,8 +4,8 @@ import TypeModel from "../models/type.model";
 const types: IType[] = [
     // roles
     {
-        title: 'Membership',
-        cat: 'Monthly',
+        title: 'Monthly',
+        cat: 'Membership',
         subCat: '550',
         description: '',
         isActive: true,

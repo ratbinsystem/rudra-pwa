@@ -1,4 +1,3 @@
-import chalk from 'chalk';
 import { IUser } from '@/interfaces';
 import { faker } from '@faker-js/faker';
 import TypeModel from '../models/type.model';
@@ -8,6 +7,8 @@ import { getRandomNumber } from '@/utility';
 import addressSeed from './address.seed';
 import documentSeed from './document.seed';
 import contactSeed from './contact.seed';
+import membershipSeed from './membership.seed';
+import _ from 'lodash';
 
 export const userSeed = async (): Promise<IUser[]> => {
   const getRoles = await TypeModel.find({ cat: 'Role' });
@@ -32,6 +33,7 @@ export const userSeed = async (): Promise<IUser[]> => {
     address: address._id,
     documents: (await seedMany(getRandomNumber(2, 5), documentSeed)).map(item => item._id),
     emergencyContact: `name: ${faker.person.firstName()} ${faker.person.lastName()}, phone: ${faker.phone.number({ style: 'human' })}, address: ${faker.location.streetAddress()}`,
+    memberships: _.map((await seedMany(getRandomNumber(2, 5), membershipSeed)), '_id'),
   },
   {
     name: faker.name.fullName(gender.title),
@@ -46,6 +48,7 @@ export const userSeed = async (): Promise<IUser[]> => {
     addresses: (await seedMany(getRandomNumber(2, 5), addressSeed)).map(item => item._id),
     documents: (await seedMany(getRandomNumber(2, 5), documentSeed)).map(item => item._id),
     emergencyContact: `name: ${faker.person.firstName()} ${faker.person.lastName()}, phone: ${faker.phone.number({ style: 'human' })}, address: ${faker.location.streetAddress()}`,
+    memberships: _.map((await seedMany(getRandomNumber(2, 5), membershipSeed)), '_id'),
   }
   ]);
 

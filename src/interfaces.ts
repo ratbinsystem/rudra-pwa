@@ -38,13 +38,14 @@ export interface IUser extends mongooseDefaults {
   address: mongoose.Types.ObjectId | IAddress | string,
   documents: [mongoose.Types.ObjectId | IDocument | string],
   emergencyContact: string,
+  memberships: [mongoose.Types.ObjectId | IMembership | string],
 }
 
 
 export interface IContact extends mongooseDefaults {
-  type: Schema.Types.ObjectId | string | IType,
-  value: string,
+  title: string,
   description: string,
+  type: Schema.Types.ObjectId | string | IType,
   isActive: boolean;
   isPrimary: boolean;
   isPublic: boolean;
@@ -90,5 +91,10 @@ export interface StringDictionary {
 }
 
 export interface IMembership extends mongooseDefaults {
-
+  startDate: Date;
+  endDate: Date;
+  type: mongoose.Types.ObjectId | IType;
+  isActive: boolean;
+  paid: string;
+  description: string, 
 }
