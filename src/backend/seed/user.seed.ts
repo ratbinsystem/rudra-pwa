@@ -17,6 +17,7 @@ export const userSeed = async (): Promise<IUser[]> => {
   const gender = genders[(Math.floor(Math.random() * genders.length))]
   const adminProfile = await documentSeed();
   const usewrProfile = await documentSeed();
+  const address = await addressSeed();
 
   const model = await UserModel.insertMany([{
     name: 'Rahul',
@@ -28,8 +29,9 @@ export const userSeed = async (): Promise<IUser[]> => {
     dp: adminProfile._id,
     description: faker.lorem.paragraph(2),
     contacts: (await seedMany(getRandomNumber(2, 5), contactSeed)).map(item => item._id),
-    addresses: (await seedMany(getRandomNumber(2, 5), addressSeed)).map(item => item._id),
+    address: address._id,
     documents: (await seedMany(getRandomNumber(2, 5), documentSeed)).map(item => item._id),
+    emergencyContact: `name: ${faker.person.firstName()} ${faker.person.lastName()}, phone: ${faker.phone.number({ style: 'human' })}, address: ${faker.location.streetAddress()}`,
   },
   {
     name: faker.name.fullName(gender.title),
@@ -42,10 +44,10 @@ export const userSeed = async (): Promise<IUser[]> => {
     description: faker.lorem.paragraph(2),
     contacts: (await seedMany(getRandomNumber(2, 5), contactSeed)).map(item => item._id),
     addresses: (await seedMany(getRandomNumber(2, 5), addressSeed)).map(item => item._id),
-
+    documents: (await seedMany(getRandomNumber(2, 5), documentSeed)).map(item => item._id),
+    emergencyContact: `name: ${faker.person.firstName()} ${faker.person.lastName()}, phone: ${faker.phone.number({ style: 'human' })}, address: ${faker.location.streetAddress()}`,
   }
   ]);
-  console.log(`${chalk.white.underline.bgGreen.bold('document Seed')} : Users`);
 
   return model;
 

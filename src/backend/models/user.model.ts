@@ -3,6 +3,7 @@ import { IUser } from '@/interfaces';
 import { title, description } from '@/utility';
 import TypeModel from './type.model';
 import DocumentModel from './document.model';
+import AddressModel from './address.model';
 import { logChangeStream } from "./IMHelper";
 
 
@@ -14,9 +15,10 @@ const schema = new Schema<IUser>({
     gender: { ref: TypeModel, type: Schema.Types.ObjectId },
     role: { ref: TypeModel, type: Schema.Types.ObjectId },
     dp: { ref: DocumentModel, type: Schema.Types.ObjectId },
-    address: { ref: TypeModel, type: Schema.Types.ObjectId },
+    address: { ref: AddressModel, type: Schema.Types.ObjectId },
     contacts: [{ ref: TypeModel, type: Schema.Types.ObjectId }],
     documents: [{ ref: DocumentModel, type: Schema.Types.ObjectId }],
+    emergencyContact: description,
 }, {
     timestamps: true,
     methods: {},

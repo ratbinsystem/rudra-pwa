@@ -15,11 +15,7 @@ export interface IPin extends mongooseDefaults {
   district: string,
 }
 
-export interface IPagination {
-  page: number,
-  limit: number,
-  total: number,
-}
+
 export interface IType extends mongooseDefaults {
   title: string,
   cat: string,
@@ -40,6 +36,7 @@ export interface IUser extends mongooseDefaults {
   contacts: [mongoose.Types.ObjectId | IContact | string],
   address: mongoose.Types.ObjectId | IAddress | string,
   documents: [mongoose.Types.ObjectId | IDocument | string],
+  emergencyContact: string,
 }
 
 
@@ -73,17 +70,6 @@ export interface IDocument extends mongooseDefaults {
   format: string;
 }
 
-export interface IOrganisation extends mongooseDefaults {
-  name: string;
-  description: string;
-  logo: IDocument;
-  type: Schema.Types.ObjectId;
-  cover: Schema.Types.ObjectId;
-  contacts: [Schema.Types.ObjectId | IContact];
-  addresses: [Schema.Types.ObjectId | IAddress];
-  blogs: [Schema.Types.ObjectId];
-  markdown: string;
-}
 export interface IBlog extends mongooseDefaults {
   _id: mongoose.Types.ObjectId;
   title: string;
@@ -102,20 +88,6 @@ export interface StringDictionary {
   [key: string]: string;
 }
 
-export interface CustomFile extends File {
-  base64String?: string;
-}
+export interface IMembership extends mongooseDefaults {
 
-export interface IToast {
-  id: number;
-  responseCode?: number;
-  autoCloseDuration?: number | null;
-  title?: string;
-  message?: string;
-}
-
-export interface IToastContextProps {
-  showToast: (config: { title?: string, message?: string, responseCode?: number, autoCloseDuration?: number | null }) => void;
-  hideToast: (id: number) => void;
-  toasts: IToast[]
 }
