@@ -22,6 +22,7 @@ export interface IType extends mongooseDefaults {
   subCat?: string,
   subSubCat?: string,
   description?: string
+  isActive?: boolean,
 }
 
 export interface IUser extends mongooseDefaults {

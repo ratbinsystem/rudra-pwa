@@ -4,16 +4,25 @@ import TypeModel from "../models/type.model";
 const types: IType[] = [
     // roles
     {
+        title: 'Membership',
+        cat: 'Monthly',
+        subCat: '550',
+        description: '',
+        isActive: true,
+    },
+    {
         title: 'ADMIN',
         cat: 'Role',
         subCat: 'ADMIN',
         description: '',
+        isActive: true,
     },
     {
         title: 'USER',
         cat: 'Role',
         subCat: 'USER',
         description: '',
+        isActive: true,
     },
     // address
     {
@@ -21,6 +30,7 @@ const types: IType[] = [
         cat: 'Address',
         subCat: 'HOME',
         description: '',
+        isActive: true,
     },
 
     {
@@ -28,12 +38,14 @@ const types: IType[] = [
         cat: 'Address',
         subCat: 'OFFICE',
         description: '',
+        isActive: true,
     },
     {
         title: 'OTHER',
         cat: 'Address',
         subCat: 'OTHER',
         description: '',
+        isActive: true,
     },
     // gender
     {
@@ -41,12 +53,14 @@ const types: IType[] = [
         cat: 'Gender',
         subCat: 'Male',
         description: '',
+        isActive: true,
     },
     {
         title: 'Female',
         cat: 'Gender',
         subCat: 'Female',
         description: '',
+        isActive: true,
     },
     // blog type
     {
@@ -55,6 +69,7 @@ const types: IType[] = [
         subCat: 'Leg',
         subSubCat: 'Squad',
         description: '',
+        isActive: true,
     },
     {
         title: 'Weighted Squad',
@@ -62,6 +77,7 @@ const types: IType[] = [
         subCat: 'Leg',
         subSubCat: 'Squad',
         description: '',
+        isActive: true,
     },
     {
         title: 'Chest Press',
@@ -69,6 +85,7 @@ const types: IType[] = [
         subCat: 'Chest',
         subSubCat: 'Chest',
         description: '',
+        isActive: true,
     },
     {
         title: 'Incline Chest Press',
@@ -76,6 +93,7 @@ const types: IType[] = [
         subCat: 'Chest',
         subSubCat: 'Chest',
         description: '',
+        isActive: true,
     },
     {
         title: 'Decline Chest Press',
@@ -83,6 +101,7 @@ const types: IType[] = [
         subCat: 'Chest',
         subSubCat: 'Chest',
         description: '',
+        isActive: true,
     },
     {
         title: 'Shoulder Press',
@@ -90,6 +109,7 @@ const types: IType[] = [
         subCat: 'Shoulder',
         subSubCat: 'Shoulder',
         description: '',
+        isActive: true,
     },
     {
         title: 'Lateral Raise',
@@ -97,6 +117,7 @@ const types: IType[] = [
         subCat: 'Shoulder',
         subSubCat: 'Lateral',
         description: '',
+        isActive: true,
     },
     {
         title: 'Front Raise',
@@ -104,6 +125,7 @@ const types: IType[] = [
         subCat: 'Shoulder',
         subSubCat: 'Front',
         description: '',
+        isActive: true,
     },
     {
         title: 'Bicep Curl',
@@ -111,6 +133,7 @@ const types: IType[] = [
         subCat: 'Arm',
         subSubCat: 'Bicep',
         description: '',
+        isActive: true,
     },
     {
         title: 'Tricep Extension',
@@ -118,6 +141,7 @@ const types: IType[] = [
         subCat: 'Arm',
         subSubCat: 'Tricep',
         description: '',
+        isActive: true,
     },
     {
         title: 'Tricep Dips',
@@ -125,6 +149,7 @@ const types: IType[] = [
         subCat: 'Arm',
         subSubCat: 'Tricep',
         description: '',
+        isActive: true,
     },
     {
         title: 'Lunges',
@@ -132,6 +157,7 @@ const types: IType[] = [
         subCat: 'Leg',
         subSubCat: 'thigh',
         description: '',
+        isActive: true,
     },
     {
         title: 'Deadlifts',
@@ -139,6 +165,7 @@ const types: IType[] = [
         subCat: 'Leg',
         subSubCat: 'Leg',
         description: '',
+        isActive: true,
     },
     {
         title: 'Leg Press',
@@ -146,6 +173,7 @@ const types: IType[] = [
         subCat: 'Leg',
         subSubCat: 'Leg',
         description: '',
+        isActive: true,
     },
     {
         title: 'Plank',
@@ -153,6 +181,7 @@ const types: IType[] = [
         subCat: 'Core',
         subSubCat: 'Core',
         description: '',
+        isActive: true,
     },
     {
         title: 'Crunches',
@@ -160,6 +189,7 @@ const types: IType[] = [
         subCat: 'Core',
         subSubCat: 'Core',
         description: '',
+        isActive: true,
     },
     {
         title: 'Russian Twists',
@@ -167,6 +197,7 @@ const types: IType[] = [
         subCat: 'Core',
         subSubCat: 'Core',
         description: '',
+        isActive: true,
     },
 
 
@@ -176,12 +207,14 @@ const types: IType[] = [
         cat: 'Document',
         subCat: 'icon',
         description: '',
+        isActive: true,
     },
     {
         title: 'cover',
         cat: 'Document',
         subCat: 'photo',
         description: '',
+        isActive: true,
     },
     // organisationTypes
     {
@@ -189,72 +222,84 @@ const types: IType[] = [
         cat: 'Organisation',
         subCat: 'GOVERNMENT',
         description: '',
+        isActive: true,
     },
     {
         title: 'PRIVATE',
         cat: 'Organisation',
         subCat: 'PRIVATE',
         description: '',
+        isActive: true,
     },
     {
         title: 'NGO',
         cat: 'Organisation',
         subCat: 'NGO',
         description: '',
+        isActive: true,
     },
     {
         title: 'TRUST',
         cat: 'Organisation',
         subCat: 'TRUST',
         description: '',
+        isActive: true,
     },
     {
         title: 'SOCIETY',
         cat: 'Organisation',
         subCat: 'SOCIETY',
         description: '',
+        isActive: true,
     },
     {
         title: 'CLUB',
         cat: 'Organisation',
         subCat: 'CLUB',
         description: '',
+        isActive: true,
     },
     {
         title: 'ASSOCIATION',
         cat: 'Organisation',
         subCat: 'ASSOCIATION',
         description: '',
+        isActive: true,
     },
     {
         title: 'FIRM',
         cat: 'Organisation',
         subCat: 'FIRM',
         description: '',
+        isActive: true,
     },
     {
         title: 'COMPANY',
         cat: 'Organisation',
         subCat: 'COMPANY',
         description: '',
+        isActive: true,
     },
     {
         title: 'PARTNERSHIP',
         cat: 'Organisation',
         subCat: 'PARTNERSHIP',
         description: '',
+        isActive: true,
     },
     {
         title: 'SOLEPROPRIETORSHIP',
         cat: 'Organisation',
         subCat: 'SOLEPROPRIETORSHIP',
         description: '',
+        isActive: true,
     },
     {
         title: 'COOPERATIVE',
         cat: 'Organisation',
         subCat: 'COOPERATIVE',
         description: '',
+        isActive: true,
     },
 
     // contactTypes
@@ -264,6 +309,7 @@ const types: IType[] = [
         subCat: 'MOBILE',
         subSubCat: 'PHONE',
         description: '',
+        isActive: true,
     },
     {
         title: 'MOBILE',
@@ -271,6 +317,7 @@ const types: IType[] = [
         subCat: 'MOBILE',
         subSubCat: 'WHATSAPP',
         description: '',
+        isActive: true,
     },
     {
         title: 'MOBILE',
@@ -278,6 +325,7 @@ const types: IType[] = [
         subCat: 'MOBILE',
         subSubCat: 'ALL',
         description: '',
+        isActive: true,
     },
     {
         title: 'MOBILE',
@@ -285,54 +333,63 @@ const types: IType[] = [
         subCat: 'MOBILE',
         subSubCat: 'ALTERNATE',
         description: '',
+        isActive: true,
     },
     {
         title: 'EMAIL',
         cat: 'Contact',
         subCat: 'EMAIL',
         description: '',
+        isActive: true,
     },
     {
         title: 'WEBSITE',
         cat: 'Contact',
         subCat: 'WEBSITE',
         description: '',
+        isActive: true,
     },
     {
         title: 'FACEBOOK',
         cat: 'Contact',
         subCat: 'FACEBOOK',
         description: '',
+        isActive: true,
     },
     {
         title: 'TWITTER',
         cat: 'Contact',
         subCat: 'TWITTER',
         description: '',
+        isActive: true,
     },
     {
         title: 'LINKEDIN',
         cat: 'Contact',
         subCat: 'LINKEDIN',
         description: '',
+        isActive: true,
     },
     {
         title: 'INSTAGRAM',
         cat: 'Contact',
         subCat: 'INSTAGRAM',
         description: '',
+        isActive: true,
     },
     {
         title: 'TELEGRAM',
         cat: 'Contact',
         subCat: 'TELEGRAM',
         description: '',
+        isActive: true,
     },
     {
         title: 'YOUTUBE',
         cat: 'Contact',
         subCat: 'YOUTUBE',
         description: '',
+        isActive: true,
     },
     // tags
     {
@@ -340,90 +397,105 @@ const types: IType[] = [
         cat: 'Tag',
         subCat: 'UPSE',
         description: '',
+        isActive: true,
     },
     {
         title: 'SSC',
         cat: 'Tag',
         subCat: 'SSC',
         description: '',
+        isActive: true,
     },
     {
         title: 'BANK',
         cat: 'Tag',
         subCat: 'BANK',
         description: '',
+        isActive: true,
     },
     {
         title: 'RAILWAY',
         cat: 'Tag',
         subCat: 'RAILWAY',
         description: '',
+        isActive: true,
     },
     {
         title: 'DEFENCE',
         cat: 'Tag',
         subCat: 'DEFENCE',
         description: '',
+        isActive: true,
     },
     {
         title: 'POLICE',
         cat: 'Tag',
         subCat: 'POLICE',
         description: '',
+        isActive: true,
     },
     {
         title: 'TEACHER',
         cat: 'Tag',
         subCat: 'TEACHER',
         description: '',
+        isActive: true,
     },
     {
         title: 'ENGINEER',
         cat: 'Tag',
         subCat: 'ENGINEER',
         description: '',
+        isActive: true,
     },
     {
         title: 'DOCTOR',
         cat: 'Tag',
         subCat: 'DOCTOR',
         description: '',
+        isActive: true,
     },
     {
         title: 'LAWYER',
         cat: 'Tag',
         subCat: 'LAWYER',
         description: '',
+        isActive: true,
     },
     {
         title: 'ACCOUNTANT',
         cat: 'Tag',
         subCat: 'ACCOUNTANT',
         description: '',
+        isActive: true,
     },
     {
         title: 'ARCHITECT',
         cat: 'Tag',
         subCat: 'ARCHITECT',
         description: '',
+        isActive: true,
     },
     {
         title: 'FARMER',
         cat: 'Tag',
         subCat: 'FARMER',
         description: '',
+        isActive: true,
     },
     {
         title: 'STUDENT',
         cat: 'Tag',
         subCat: 'STUDENT',
         description: '',
+        isActive: true,
     },
     {
         title: 'BUSINESSMAN',
         cat: 'Tag',
         subCat: 'BUSINESSMAN',
         description: '',
+        isActive: true,
     }
 ]
 

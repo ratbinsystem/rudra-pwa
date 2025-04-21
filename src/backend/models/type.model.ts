@@ -12,6 +12,10 @@ const schema = new Schema<IType>({
     },
     subCat: String,
     subSubCat: String,
+    isActive: {
+        type: Boolean,
+        default: true,
+    }
 }, {
     timestamps: true,
     methods: {},
