@@ -1,6 +1,5 @@
 import rudraResponse from "@api/utility";
-import { NextRequest } from "next/server";
 
-export function GET(request: NextRequest) {
+export function GET() {
     return rudraResponse(200, "Hello from API Route", null);
 }

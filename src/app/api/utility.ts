@@ -1,5 +1,5 @@
 import dbConnect from "@/backend/db";
-import { Model, models } from "mongoose";
+import { Model } from "mongoose";
 import { NextResponse } from "next/server";
 
 /**
@@ -15,7 +15,7 @@ export default function apiResponse<T = unknown>(
     status: number,
     message: string,
     data?: T,
-    error?: string | Record<string, any>
+    error?: string | Record<string, unknown> | typeof Error
 ) {
     return new NextResponse(
         JSON.stringify({ message, data, error }),

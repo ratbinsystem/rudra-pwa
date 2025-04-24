@@ -1,5 +1,4 @@
 import { faker } from '@faker-js/faker';
-import chalk from 'chalk';
 import TypeModel from '../models/type.model';
 import DocumentModel from '../models/document.model';
 
