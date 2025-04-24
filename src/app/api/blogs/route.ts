@@ -67,7 +67,7 @@ export async function POST(req: NextRequest) {
                     message: issue.message,
                 };
             });
-            return rudraResponse(400, "Validation error", null,errors);
+            return rudraResponse(400, "Validation error", null, { errors });
         }
 
         await dbConnect();
