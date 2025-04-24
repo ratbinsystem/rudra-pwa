@@ -27,26 +27,23 @@ export const apiEndPoint = {
 
 export function paramsToObject(uRLSearchParams: URLSearchParams) {
 	const obj: Record<string, string | string[]> = {};
-  
-	for (const [key, value] of uRLSearchParams) {
-  
-	  if (obj.hasOwnProperty(key)) {
-		if (Array.isArray(obj[key])) {
-		  obj[key].push(value);
-		} else {
-		  obj[key] = [obj[key], value];
-		}
-	  } else {
-		obj[key] = value;
-	  }
-	}
-  
-	return obj;
-  }
 
-  export const rudraResponse = (data: unknown, status: number) => {
-	return Response.json({ data }, { status });
-  }
+	for (const [key, value] of uRLSearchParams) {
+
+		if (obj.hasOwnProperty(key)) {
+			if (Array.isArray(obj[key])) {
+				obj[key].push(value);
+			} else {
+				obj[key] = [obj[key], value];
+			}
+		} else {
+			obj[key] = value;
+		}
+	}
+
+	return obj;
+}
+
 
 export const MARKDOWN = `# Welcome to StackEdit!
 

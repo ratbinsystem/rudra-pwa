@@ -1,3 +1,5 @@
+import dbConnect from "@/backend/db";
+import { Model, models } from "mongoose";
 import { NextResponse } from "next/server";
 
 /**
@@ -24,4 +26,40 @@ export default function apiResponse<T = unknown>(
             },
         }
     );
+}
+
+// export const getModelById = async <T>(model: Model<T>, id: string) => {
+//     try {
+//         await dbConnect();
+//         const blog = await model.findById(id)
+//         if (!blog) {
+//             return apiResponse(404, "Type not found", null);
+//         }
+//         return apiResponse(200, "Type fetched successfully", blog);
+//     }
+//     catch (error) {
+//         return apiResponse(500, "Internal server error", null, error instanceof Error ? error.message : String(error));
+//     }
+// }
+
+
+export const getModelById = async <T>(model: Model<T>, id: string) => {
+    let returnable: { status: number, message: string, data: T | null, error: null | string | typeof Error } = {
+        status: 0,
+        message: "",
+        data: null,
+        error: null
+    }
+    try {
+        await dbConnect();
+        const blog = await model.findById(id)
+        if (!blog) {
+            returnable = { status: 404, message: `${model.modelName} not found`, data: null, error: null }
+        }
+        returnable = { status: 200, message: `${model.modelName} fetched successfully`, data: blog, error: null }
+    }
+    catch (error) {
+        returnable = { status: 500, message: "Internal server error", data: null, error: error instanceof Error ? error.message : String(error) }
+    }
+    return returnable
 }
