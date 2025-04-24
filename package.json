@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "@faker-js/faker": "^9.7.0",
+    "bootstrap": "^5.3.5",
+    "bootstrap-icons": "^1.11.3",
     "lodash": "^4.17.21",
     "mongoose": "^8.13.2",
     "next": "15.3.1",
@@ -27,6 +29,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.3.1",
+    "sass": "^1.87.0",
     "typescript": "^5"
   }
 }

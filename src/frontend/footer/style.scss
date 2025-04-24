@@ -1,0 +1,19 @@
+.footer-container {
+    // background: linear-gradient(to bottom right, rgba(0, 0, 0), rgba(255, 255, 255, 0.5)), 
+    // url('../public/back.jpg');
+    background-size: cover;
+    background-position: cover;
+    background-repeat: no-repeat;
+    
+    h5, p {
+        color: white;
+    }
+    #newsletter1 {
+        background: transparent;
+        color: white;
+
+        &::placeholder{
+            color: gainsboro  ;
+        }
+    }
+}
