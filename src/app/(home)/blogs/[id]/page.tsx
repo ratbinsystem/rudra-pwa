@@ -1,4 +1,4 @@
-import { Metadata, ResolvingMetadata } from 'next'
+import { Metadata } from 'next'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 
 interface Props {
@@ -7,9 +7,7 @@ interface Props {
 
 
 export async function generateMetadata(
-    { params }: Props,
-    parent: ResolvingMetadata
-): Promise<Metadata> {
+    { params }: Props): Promise<Metadata> {
     // read route params
     const { id } = await params
 
