@@ -1,6 +1,7 @@
 import dbConnect from "@/backend/db";
 import { Model } from "mongoose";
 import { NextResponse } from "next/server";
+import { string } from "zod";
 
 /**
  * Generates a standardized API response in Next.js
@@ -43,7 +44,11 @@ export default function apiResponse<T = unknown>(
 // }
 
 
-export const getModelById = async <T>(model: Model<T>, id: string) => {
+export const getModelById = async<T>(model: Model<T>, id: string, populateArray:
+    {
+        path: string,
+        select: string,
+    }[]) => {
     let returnable: { status: number, message: string, data: T | null, error: null | string | typeof Error } = {
         status: 0,
         message: "",
@@ -52,7 +57,7 @@ export const getModelById = async <T>(model: Model<T>, id: string) => {
     }
     try {
         await dbConnect();
-        const blog = await model.findById(id)
+        const blog = await model.findById(id).populate(populateArray)
         if (!blog) {
             returnable = { status: 404, message: `${model.modelName} not found`, data: null, error: null }
         }
