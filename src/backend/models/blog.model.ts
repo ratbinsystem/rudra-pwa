@@ -21,14 +21,7 @@ const schema = new Schema<IBlog>({
   createdBy: { ref: UserModel, type: Schema.Types.ObjectId } ,
   thumbnail: {ref: documentModel, type: Schema.Types.ObjectId},
   documents: [{ ref: documentModel, type: Schema.Types.ObjectId }],
-  rows : {
-    type: Number,
-    default: 1
-  },
-  columns : {
-    type: Number,
-    default: 1
-  },
+
 }, {
   timestamps: true,
   methods: {},

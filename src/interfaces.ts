@@ -82,8 +82,6 @@ export interface IBlog extends mongooseDefaults {
   tags: [Schema.Types.ObjectId | IType];
   thumbnail: Schema.Types.ObjectId | IDocument;
   documents: [Schema.Types.ObjectId | IDocument];
-  rows: number;
-  columns: number;
 }
 
 export interface StringDictionary {

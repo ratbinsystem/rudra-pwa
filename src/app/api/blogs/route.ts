@@ -14,13 +14,23 @@ export async function GET(
         const { title,
             subCat, subSubCat, createdBy } = Object.fromEntries(req.nextUrl.searchParams);
         let filterCriteria = {};
-        const blogType = await TypeModel.findOne({ cat: 'Blog', title: { $eq: title }, subCat: { $eq: subCat }, subSubCat: { $eq: subSubCat }, isActive: true });
-        filterCriteria = blogType ? { type: blogType._id } : {};
-
+        if (title || subCat || subSubCat) {
+            const blogType = await TypeModel.findOne({ cat: 'Blog', title: { $eq: title }, subCat: { $eq: subCat }, subSubCat: { $eq: subSubCat }, isActive: true });
+            filterCriteria = blogType ? { type: blogType._id } : {};
+        }
         if (createdBy) {
             filterCriteria = { createdBy };
         }
-        const feature = new ApiFeatures(BlogModel.find(filterCriteria), Object.fromEntries(req.nextUrl.searchParams))
+        const feature = new ApiFeatures(BlogModel.find(filterCriteria).populate([
+            {
+                path: 'thumbnail',
+                select: 'uri',
+            },
+            {
+                path: 'tags',
+                select: 'title',
+            }
+        ]), Object.fromEntries(req.nextUrl.searchParams))
         await dbConnect();
         const blogs = await feature.sort().paginate().select().exec();
         return rudraResponse(200, "Blogs fetched successfully", blogs);

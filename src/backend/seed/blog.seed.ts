@@ -20,8 +20,6 @@ export const blogSeed = async (): Promise<IBlog> => {
     seos: faker.lorem.words(5),
     thumbnail: (await documentSeed())._id,
     documents: (await seedMany(getRandomNumber(2, 5), documentSeed)).map(item => item._id),
-    rows: getRandomNumber(1, 3),
-    columns: getRandomNumber(1, 3),
   });
   return model;
 }

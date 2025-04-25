@@ -10,6 +10,11 @@ export const description = {
 	maxlength: 500,
 }
 
+export const formatDate = (dateString: string) => {
+	const options = { year: "numeric" as const, month: "long" as const, day: "numeric" as const }
+	return new Date(dateString).toLocaleDateString(undefined, options)
+}
+
 export const markdown = {
 	minlength: 100,
 	maxlength: 1000000,
