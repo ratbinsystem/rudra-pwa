@@ -1,7 +1,6 @@
 import dbConnect from "@/backend/db";
 import { Model } from "mongoose";
 import { NextResponse } from "next/server";
-import { string } from "zod";
 
 /**
  * Generates a standardized API response in Next.js
