@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { MDXRemote } from 'next-mdx-remote/rsc'
-
+import './style.scss';
+import { formatDate } from '@/utility';
 interface Props {
     params: Promise<{ id: string }>
 }
@@ -41,15 +42,20 @@ export default async function Page({
         <div className="container-fluid">
             <div className="row">
                 <div className="col-md-9 col-sm-12">
+                    <div className='blog-post-header'>
+                        <h1 className='text-primary'>{post.data.title}</h1>
+                        <p className='blog-post-description text-muted'>
+                            {post.data.description}
+                        </p>
+                    </div>
+                    <p className='blog-post-createdAt text-muted'>
+                        Posted on : {formatDate(post.data.createdAt)}
+                    </p>
+                    <hr className="border border-primary border-2 opacity-50"/>
                     <MDXRemote source={post.data.markdown} />
                 </div>
                 <div className="col-md-3 col-sm-12">
-                    <h2>Related Posts</h2>
-                    <ul>
-                        <li><a href="#">Post 1</a></li>
-                        <li><a href="#">Post 2</a></li>
-                        <li><a href="#">Post 3</a></li>
-                    </ul>
+                   
                 </div>
             </div>
         </div>

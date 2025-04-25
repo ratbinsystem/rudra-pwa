@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Rudra Gym",
+  keywords: "Rudra Gym, bakhri gym, best gym in bakhri, gym in begusrai fitness, health, wellness, gym, workout, training, personal trainer, group classes, nutrition, bodybuilding",
   description: "Rudra Gym offers modern equipment, a yoga and aerobics studio, spacious locker rooms, and a wellness area. With certified trainers and group classes, we provide a supportive and energetic environment to help you achieve your fitness goals.",
 };
 
