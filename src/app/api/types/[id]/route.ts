@@ -6,6 +6,6 @@ export async function GET(
     request: Request,
     { params }: { params: Promise<{ id: string }> }
 ) {
-    const {status, message, data, error} = await getModelById<IType>(TypeModel, (await params).id)
+    const {status, message, data, error} = await getModelById<IType>(TypeModel, (await params).id,[])
     return rudraResponse(status, message, data, error ?? undefined)
 }
