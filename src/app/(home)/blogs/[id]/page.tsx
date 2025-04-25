@@ -7,7 +7,7 @@ export default async function Page({
 }) {
     const { id } = await params
 
-    const data = await fetch(`http://localhost:3000/api/blogs/${id}`);
+    const data = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/blogs/${id}`);
     const post = await data.json();
 
     return (
