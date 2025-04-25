@@ -1,4 +1,5 @@
 // import type { NextConfig } from "next";
+import remarkGfm from 'remark-gfm'
 
 // const nextConfig: NextConfig = {
 //   /* config options here */
@@ -61,6 +62,7 @@ const nextConfig = {
 
 const withMDX = createMDX({
   // Add markdown plugins here, as desired
+  options: { remarkPlugins: [remarkGfm] }
 })
 
 // Merge MDX config with Next.js config

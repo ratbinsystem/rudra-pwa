@@ -24,16 +24,16 @@ export default function Header() {
                 <Link className="nav-link active" aria-current="page" href="/"> <i className="bi bi-house-fill"></i> Rudra GYM</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" href="#"><i className="bi bi-info-circle"></i> About</Link>
+                <Link className="nav-link" href="/about"><i className="bi bi-info-circle"></i> About</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" href="#"><i className="bi bi-people-fill"></i> Membership</Link>
+                <Link className="nav-link" href="/membership"><i className="bi bi-people-fill"></i> Membership</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" href="/blogs"><i className="bi bi-card-heading"></i> Blogs</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" href="#"> <i className="bi bi-headset"></i>  Contact Us</Link>
+                <Link className="nav-link" href="/contactUs"> <i className="bi bi-headset"></i>  Contact Us</Link>
               </li>
             </ul>
 
